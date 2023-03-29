@@ -1,7 +1,7 @@
 # React animation
 
 React animation Json with react-lottie to learning use this lib.
-2 versions one in master and other in branch feat/lottie-2
+2 versions one in branch main and other in the branch feat/lottie-2
 
 ## How to use
 
