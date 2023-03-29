@@ -1,22 +1,50 @@
 import React from "react";
 import Link from "next/link";
-import Analytics from "../src/components/animations/analitcs.js"; //"../animations/analytics.js";
+import Head from "next/head";
 import Section from "../src/components/section";
-const Thing: React.FC<{ msg: string }> = (props) => {
-  return <div>{props.msg}</div>;
-};
+import loaderData from "../src/components/animations/loader.json";
+import bgData from "../src/components/animations/bg.json";
+import { useEffect, useState } from "react";
+import Animations from "../src/components/animations/animations";
 
-export default () => (
-  <div>
-    <Section
-      title="Advanced Analytics"
-      description="AI/ML-based system that reflects business Intelligence in real-time and provides a recommended course of action"
-      animation={<Analytics />}
-      //number={<Number4 />}
-    ></Section>
-    Hello World. <Thing msg="hello" />
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-  </div>
-);
+export default function home() {
+  const [isLoad, setIsLoad] = useState(true);
+
+  const getLoader = () => {
+    setTimeout(() => {
+      setIsLoad(false);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    getLoader();
+  }, []);
+
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Head>
+        <title>Animate JSON</title>
+      </Head>
+      {isLoad ? (
+        <Section
+          title="Advanced Animations"
+          description="Test React animation Json"
+          size="200px"
+          animation={<Animations animation={loaderData} />}
+        ></Section>
+      ) : (
+        <>
+          <Section
+            size="auto"
+            title="Advanced Animations"
+            description="Test React animation Json"
+            animation={<Animations animation={bgData} />}
+          ></Section>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </>
+      )}
+    </div>
+  );
+}

@@ -17,9 +17,13 @@
     "react": "latest",
     "react-dom": "latest",
     "react-lottie": "1.2.3",
+    "react-lottie-player": "^1.5.4",
     "typescript": "3.6.4"
   },
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/react-lottie": "^1.2.6"
+  }
 }

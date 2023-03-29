@@ -1,6 +1,8 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "./analytics.json";
+//import animationData from "./analytics.json";
+import animationData from "./loader.json";
+
 
 export default function Overnight() {
   const defaultOptions = {

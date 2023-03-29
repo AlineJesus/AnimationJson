@@ -1,4 +1,6 @@
-# Hello World example
+# React animation
+
+React animation Json with react-lottie to learning use this lib.
 
 ## How to use
 
